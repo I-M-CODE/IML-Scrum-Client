@@ -64,7 +64,7 @@ function FormFriday(){
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
           <div class="grid grid-cols-1">
-            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Qual foi a melhor parte do dia dessa semana?</label>
+            <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Qual foi a melhor parte dessa semana?</label>
             <input id="input3" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
           </div>
           <div class="grid grid-cols-1">
@@ -94,7 +94,7 @@ function FormFriday(){
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-7">
-          <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Possuí alguma observação/aviso sobre essa semana/a próxima que nós precisemos saber?</label>
+          <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Possuí alguma observação/aviso sobre essa próxima semana que precisemos saber?</label>
           <input id="input9" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text"  />
         </div>
 
