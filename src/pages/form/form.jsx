@@ -25,7 +25,7 @@ function Form(){
       const input2 = document.getElementById('input2').value
       const input3 = document.getElementById('input3').value
 
-      Axios.post('http://localhost:3001/insertForms', {colaborador: nome, colaborador_email: email, input1: input1, input2: input2, input3: input3})
+      Axios.post('https://iml-scrum-server.herokuapp.com/insertForms', {colaborador: nome, colaborador_email: email, input1: input1, input2: input2, input3: input3})
       .then((response)=>{
         navigate('/')
         location.reload()

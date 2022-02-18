@@ -10,8 +10,6 @@ function Admin() {
     url['search'] = atob(token)
     var id = url.searchParams.get("id")
 
-
-  
     if (id == null){
       return(<h1>Permission Denied</h1>)
     }else{

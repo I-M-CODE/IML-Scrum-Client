@@ -80,7 +80,7 @@ export function Table() {
 
 window.onload = () => {
   let my_array = []
-  Axios.post('http://localhost:3001/displayForms')
+  Axios.post('https://iml-scrum-server.herokuapp.com/displayForms')
   .then((response)=>{
 
     my_array = response['data']

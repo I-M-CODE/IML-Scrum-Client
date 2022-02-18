@@ -13,7 +13,7 @@ function Login(){
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
-    Axios.post('http://localhost:3001/login', 
+    Axios.post('https://iml-scrum-server.herokuapp.com/login', 
     {email: email, password: password})
     .then((response)=> {
       if (response['data'].length > 0){
@@ -27,7 +27,7 @@ function Login(){
             
             if(data['permissions'] == 0){
               if(day==5){
-                navigate(`/formFriday?${geturl}`)
+                navigate(`/Friday?token=${geturl}`)
                 location.reload()
               }else{
                 navigate(`/form?token=${geturl}`)

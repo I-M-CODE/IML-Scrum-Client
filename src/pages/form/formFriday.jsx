@@ -27,7 +27,7 @@ function FormFriday(){
       const input9 = document.getElementById('input9').value
       const input10 = document.getElementById('input10').value
 
-      Axios.post('http://localhost:3001/insertFriday', {colaborador: nome, colaborador_email: email, input1: input1, input2: input2, input3: input3, input4: input4, input5: input5, input6: input6, input7: input7, input8: input8, input9: input9, input10: input10})
+      Axios.post('https://iml-scrum-server.herokuapp.com/insertFriday', {colaborador: nome, colaborador_email: email, input1: input1, input2: input2, input3: input3, input4: input4, input5: input5, input6: input6, input7: input7, input8: input8, input9: input9, input10: input10})
       .then((response)=>{
         navigate('/')
         location.reload()
