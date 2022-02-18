@@ -5,6 +5,7 @@ import Login from '../pages/login/login';
 import Form from '../pages/form/form';
 import FormFriday from '../pages/form/formFriday';
 import { ModalTable } from '../pages/teste';
+import { TableReformed } from '../components/TableReformed';
 
 function RoutesNavigation() {
   return (

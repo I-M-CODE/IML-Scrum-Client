@@ -49,8 +49,6 @@ function Form(){
             <h1 class="text-gray-600 font-bold md:text-2xl text-xl">I'mLabs Form</h1>
           </div>
         </div>
-
-
      
           <div class="grid grid-cols-1 m-5">
             <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">O que você fez ontem?</label>
