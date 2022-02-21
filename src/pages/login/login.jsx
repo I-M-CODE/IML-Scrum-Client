@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom"
 import logoImCode from '../../images/imcode_logo.svg'
 import Axios from 'axios'
+import NProgress from "nprogress"
 
 function Login(){
 
   const navigate = useNavigate()
 
   const verifyLogin = () => { 
-
+    NProgress.start();
     const d = new Date();
     let day = d.getDay();
     const email = document.getElementById('email').value
@@ -17,6 +18,7 @@ function Login(){
     {email: email, password: password})
     .then((response)=> {
       if (response['data'].length > 0){
+            NProgress.done();
             var data = response['data'][0]
 
             var id = data['id']
@@ -44,8 +46,13 @@ function Login(){
     });
   }
 
+
   return (
+<>
+
     <div className="min-h-screen bg-indigo-700">
+    <script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
+    <link rel='stylesheet' href='https://unpkg.com/nprogress@0.2.0/nprogress.css'/>
       <div className="box-login min-h-screen w-72 my-0 mx-auto text-white flex flex-col justify-center items-center">
         <img src={logoImCode} alt="ImCode Logo" className="w-16 mb-5"/>
         <h1 className="mb-14 font-semibold text-3xl">Im Code</h1>
@@ -68,6 +75,7 @@ function Login(){
        
       </div>  
     </div>
+    </>
     )
 }
 

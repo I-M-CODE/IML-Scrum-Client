@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Axios from 'axios'
+import NProgress from "nprogress"
 
 import { TableReformed } from "../../components/TableReformed";
 

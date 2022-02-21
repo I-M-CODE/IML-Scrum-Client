@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import logo from '../../images/imcode_logo.svg'
 import Axios from 'axios'
+import NProgress from "nprogress"
 
 function FormFriday(){
 
@@ -15,7 +16,7 @@ function FormFriday(){
     var email = url.searchParams.get("email")
 
     const insertForm = () =>{
-       
+      NProgress.start();
       const input1 = document.getElementById('input1').value
       const input2 = document.getElementById('input2').value
       const input3 = document.getElementById('input3').value
