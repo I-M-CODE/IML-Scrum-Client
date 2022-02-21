@@ -29,8 +29,8 @@ function Form(){
 
       Axios.post('https://iml-scrum-server.herokuapp.com/insertForms', {colaborador: nome, colaborador_email: email, input1: input1, input2: input2, input3: input3})
       .then((response)=>{
-        navigate('/')
-        location.reload()
+        document.getElementById("mensagem").style.display = "block";
+        NProgress.done();
       })  
     }
     
@@ -39,6 +39,9 @@ function Form(){
     }else{
   return( 
     <div class="flex min-h-screen bg-indigo-700 items-center justify-center">
+    <div id="mensagem" style={{display:'none'}} class="flex items-center fixed top-0 bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
+          <p>Formulário enviado</p>
+    </div>
       <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
         <div class="flex justify-center py-4">
           <div class="flex bg-gray-800 rounded-full md:p-4 p-2 border-2 border-gray-300">
@@ -67,7 +70,7 @@ function Form(){
 
 
         <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-          <button onClick={() => goBack()} class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Cancelar</button>
+          <button onClick={() => goBack()} class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Sair</button>
           <button onClick={() => insertForm()} class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Enviar</button>
         </div>
 

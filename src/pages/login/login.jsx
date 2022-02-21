@@ -7,6 +7,13 @@ function Login(){
 
   const navigate = useNavigate()
 
+  var url_string = window.location.href
+  var url = new URL(url_string);
+  var message = url.searchParams.get("message")
+  if (message){
+    document.getElementById("mensagem").style.display = "block";
+  }
+
   const verifyLogin = () => { 
     NProgress.start();
     const d = new Date();
@@ -39,18 +46,24 @@ function Login(){
               location.reload()
             }
 
-      }else{
-        console.log('errado')
+          }else{
+            document.getElementById("alertalogin").style.display = "block";
+            NProgress.done();
+          }
+    
+        });
       }
-
-    });
-  }
-
-
-  return (
-<>
+    
+    
+      return (
+    <>
+    
+        
 
     <div className="min-h-screen bg-indigo-700">
+    <div id="alertalogin" style={{display:'none'}} class="flex items-center pt-5 fixed top-0 bg-red-500 text-white text-sm font-bold px-4 py-3" role="alert">
+          <p>Credenciais Incorretas</p>
+    </div>
     <script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
     <link rel='stylesheet' href='https://unpkg.com/nprogress@0.2.0/nprogress.css'/>
       <div className="box-login min-h-screen w-72 my-0 mx-auto text-white flex flex-col justify-center items-center">
