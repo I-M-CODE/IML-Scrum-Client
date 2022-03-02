@@ -114,7 +114,7 @@ export function TableReformed(props){
                 <Tr key={item.id}>
                  <Td>{item.colaborador}</Td>
                  <Td>{item.colaborador_email}</Td>
-                 <Td>{item.data.substring(0,10)}</Td>
+                 <Td>{item.data.replace('T', ' ').replace('.000Z', '')}</Td>
                  <Td isNumeric><ModalTable Colaborador={item.colaborador} tipo={item.tipo} 
                    input1={item.input1}
                    input2={item.input2}
