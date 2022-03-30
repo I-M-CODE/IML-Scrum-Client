@@ -40,7 +40,7 @@ export function TableReformed(props){
 
   useEffect(() => {
     async function getItems(){
-      await Axios.post('https://iml-scrum-server.herokuapp.com/displayForms')
+      await Axios.post('https://iml-scrum-server.vercel.app/api/server/displayForms')
         .then((response)=>{
         setArray(response.data)
       })

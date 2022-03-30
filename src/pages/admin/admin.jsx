@@ -5,7 +5,6 @@ import NProgress from "nprogress"
 import { TableReformed } from "../../components/TableReformed";
 
 function Admin() {
-
     var url_string = window.location.href
     var url = new URL(url_string);
     var token = url.searchParams.get("token")

@@ -21,9 +21,10 @@ function Login(){
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
-    Axios.post('https://iml-scrum-server.herokuapp.com/login', 
+    Axios.post('https://iml-scrum-server.vercel.app/api/server/login', 
     {email: email, password: password})
     .then((response)=> {
+      console.log(response['data'])
       if (response['data'].length > 0){
             NProgress.done();
             var data = response['data'][0]
