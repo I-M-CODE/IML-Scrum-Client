@@ -32,16 +32,18 @@ function Login(){
             var id = data['id']
             var email = data['email']
             var nome = data['complete_name']
-            var permissions = data['permissions']
+            var job = data['job']
             var geturl = btoa(`id=${id}&email=${email}&nome=${nome}`)
             
-            if(data['permissions'] == 0){
+            if(data['job'] == 0){
               if(day==5){
                 navigate(`/Friday?token=${geturl}`)
                 location.reload()
               }else{
                 navigate(`/form?token=${geturl}`)
               }
+            }else if(data['job'] == 2){  
+              navigate(`/PJ?token=${geturl}`)
             }else{
               navigate(`/admin/table?token=${geturl}`)
               location.reload()
