@@ -31,6 +31,7 @@ export function ModalTable(props) {
           <ModalContent>
             <ModalHeader>Resposta do(a): {props.Colaborador}</ModalHeader>
             <ModalCloseButton /><hr/>
+            <ModalBody pb={2}>Dia <br/>R: {props.input9}</ModalBody><hr/>
             <ModalBody pb={2}>Horário de entrada <br/>R: {props.input1}</ModalBody><hr/>
             <ModalBody pb={2}>Saída para intervalo <br/>R: {props.input2}</ModalBody><hr/>
             <ModalBody pb={2}>Retorno do intervalo <br/>R: {props.input3}</ModalBody><hr/>

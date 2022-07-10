@@ -16,6 +16,49 @@ function PJ(){
     var id = url.searchParams.get("id")
     var email = url.searchParams.get("email")
 
+    const calcHours = () =>{
+      const entrada = document.getElementById('input1').value
+      const intervalo = document.getElementById('input2').value
+      const retorno = document.getElementById('input3').value
+      const saida = document.getElementById('input4').value 
+      
+      if(entrada !== '' && saida !== ''){
+
+        var value_start = entrada.split(':');
+        var value_end = saida.split(':');
+
+        var time_start = new Date();
+        var time_end = new Date();
+
+        time_start.setHours(value_start[0], value_start[1])
+        time_end.setHours(value_end[0], value_end[1])
+
+        const miliDiff = time_end-time_start;       
+        var hourDiff = (miliDiff/60000)/60 
+
+        if(intervalo !== '' && retorno !== ''){
+          var value_start2 = intervalo.split(':');
+          var value_end2 = retorno.split(':');
+  
+          var time_start2 = new Date();
+          var time_end2 = new Date();
+  
+          time_start2.setHours(value_start2[0], value_start2[1])
+          time_end2.setHours(value_end2[0], value_end2[1])
+  
+          const miliDiff2 = time_end2-time_start2;       
+          const hourDiff2 = (miliDiff2/60000)/60   
+
+          console.log(hourDiff)
+          console.log(hourDiff2)
+          
+          hourDiff = hourDiff - hourDiff2
+        }
+
+        document.getElementById('input7').value = hourDiff.toFixed(2).replace('.', ':')
+      }
+    }
+
     const goBack = () =>{
         NProgress.start();
         navigate('/')
@@ -96,7 +139,7 @@ function PJ(){
 
         <div class="grid grid-cols-1 mt-5 mx-7">
           <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Horas corridas? (Número de horas trabalhadas no dia)</label>
-          <input id="input7" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text"  />
+          <input id="input7" onClick={() => calcHours()} class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" readonly/>
         </div>
 
         <div class="grid grid-cols-1 mt-5 mx-7">
