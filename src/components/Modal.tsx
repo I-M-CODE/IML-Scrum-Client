@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios'
 
 import {
   useDisclosure,
@@ -15,9 +16,20 @@ import {
 export function ModalTable(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const getRelatorio = () => {
+    console.log(props.colaborador_email)
+    Axios.get('https://iml-scrum-server.vercel.app/api/server/Relatorio/' + props.colaborador_email)
+    .then((response)=> {
+      console.log(response.data)
+      window.open('https://iml-scrum-server.vercel.app/api/server/Relatorio/' + props.colaborador_email, "_blank")
+      window.open('https://www.convertcsv.com/json-to-csv.htm', "_blank")
+    })
+  }
+
   if(props.tipo==3){
     return(
       <>
+        <Button onClick={getRelatorio}>Relatório</Button>
         <Button onClick={onOpen}>Abrir Formulário (PJ)</Button>
   
         <Modal

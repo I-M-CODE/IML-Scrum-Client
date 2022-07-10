@@ -116,6 +116,7 @@ export function TableReformed(props){
                  <Td>{item.colaborador_email}</Td>
                  <Td>{item.data.replace('T', ' ').replace('.000Z', '')}</Td>
                  <Td isNumeric><ModalTable Colaborador={item.colaborador} tipo={item.tipo} 
+                   colaborador_email = {item.colaborador_email}
                    input1={item.input1}
                    input2={item.input2}
                    input3={item.input3}
