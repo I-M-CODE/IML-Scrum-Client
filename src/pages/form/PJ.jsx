@@ -39,6 +39,11 @@ function PJ() {
 
         setHorasTrabalhadas(calc);
         calcHours();
+
+        alert(`Horas registradas, redirecionando para a tela de login em 3 segundos...`);
+        setTimeout(() => {
+          navigate(`/login`)
+        }, 3000)
       }
     }
   }
