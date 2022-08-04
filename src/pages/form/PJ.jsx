@@ -38,6 +38,7 @@ function PJ() {
         const calc = (parseInt(new_saida[0]) - parseInt(new_entrada[0])) + (parseInt(new_saida[1]) - parseInt(new_entrada[1])) - (parseInt(new_retorno[0]) - parseInt(new_intervalo[0])) + (parseInt(new_retorno[1]) - parseInt(new_intervalo[1]));
 
         setHorasTrabalhadas(calc);
+        calcHours();
       }
     }
   }
@@ -106,7 +107,7 @@ function PJ() {
       .then((response) => {
         document.getElementById("mensagem").style.display = "block";
         NProgress.done();
-      }).catch(err => console.log(err))
+      })
   }
 
   if (token == null) {
@@ -180,6 +181,11 @@ function PJ() {
                   ></textarea>
                 </div>
 
+                <div class="grid grid-cols-1 mt-5 mx-7" style={{ display: "none" }}>
+                  <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Horas corridas? (Número de horas trabalhadas no dia)</label>
+                  <input id="input7" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" readonly />
+                </div>
+
                 <div>
                   <label class="sr-only" for="message">Message</label>
                   <textarea
@@ -192,7 +198,7 @@ function PJ() {
 
                 <div class="mt-4">
                   <button
-                    onClick={insertForm()}
+                    onClick={() => insertForm()}
                     class="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
                   >
                     <span class="font-medium"> Contabilizar horas </span>
