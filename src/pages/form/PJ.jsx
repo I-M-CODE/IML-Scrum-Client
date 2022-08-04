@@ -192,7 +192,7 @@ function PJ() {
 
                 <div class="mt-4">
                   <button
-                    onClick={() => insertForm()}
+                    onClick={insertForm()}
                     class="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
                   >
                     <span class="font-medium"> Contabilizar horas </span>
