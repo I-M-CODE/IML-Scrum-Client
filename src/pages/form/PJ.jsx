@@ -83,9 +83,9 @@ function PJ(){
       })  
     }
     
-    if (token == null){
-      return(<h1>Permission Denied</h1>)
-    }else{
+   if (token == null){
+     return(<h1>Permission Denied</h1>)
+   }else{
   return( 
     <div class="flex min-h-screen bg-indigo-700 items-center justify-center">
     <div id="mensagem" style={{display:'none'}} class="flex items-center fixed top-0 bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
@@ -156,7 +156,7 @@ function PJ(){
       </div>
     </div>
   )
-}
+ }
 }
 
 export default PJ;
