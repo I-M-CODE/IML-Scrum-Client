@@ -113,13 +113,15 @@ function PJ() {
     return (<h1>Permission Denied</h1>)
   } else {
     return (
-
       <section class="bg-gray-100 min-h-screen">
+        <div id="mensagem" style={{ display: 'none' }} class="flex items-center fixed top-0 bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
+          <p>Formulário enviado</p>
+        </div>
         <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
             <div class="lg:py-12 lg:col-span-2">
               <p class="max-w-xl text-lg">
-                Adicione suas horas trabalhas
+                Adicione suas horas trabalhadas.
               </p>
 
               <div class="mt-8">
@@ -137,7 +139,7 @@ function PJ() {
             </div>
 
             <div class="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
-              <form action="" class="space-y-4">
+              <div action="" class="space-y-4">
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label class="sr-only" for="input1">Horário de entrada</label>
@@ -206,13 +208,81 @@ function PJ() {
                     </svg>
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-    );
+      // <div class="flex min-h-screen bg-indigo-700 items-center justify-center">
+      // <div id="mensagem" style={{display:'none'}} class="flex items-center fixed top-0 bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
+      //       <p>Formulário enviado</p>
+      // </div>
+      //   <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
+      //     <div class="flex justify-center py-4">
+      //       <div class="flex bg-gray-800 rounded-full md:p-4 p-2 border-2 border-gray-300">
+      //         <img src={logo} className="w-8 h-8" alt="" />
+      //       </div>
+      //     </div>
+
+      //     <div class="flex justify-center">
+      //       <div class="flex">
+      //         <h1 class="text-gray-600 font-bold md:text-2xl text-xl">I'mLabs Form</h1>
+      //       </div>
+      //     </div>
+
+      //     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+      //       <div class="grid grid-cols-1">
+      //         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Horário de Entrada</label>
+      //         <InputMask mask="99:99" id="input1" class="h-12 py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
+      //       </div>
+      //       <div class="grid grid-cols-1">
+      //         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Saída para Intervalo</label>
+      //         <InputMask mask="99:99" id="input2" class="h-12 py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
+      //       </div>
+      //     </div>
+
+      //     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+      //       <div class="grid grid-cols-1">
+      //         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Retorno do Intervalo</label>
+      //         <InputMask mask="99:99" id="input3" class="h-12 py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
+      //       </div>
+      //       <div class="grid grid-cols-1">
+      //         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Horário de Saída</label>
+      //         <InputMask mask="99:99" id="input4" class="h-12 py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
+      //       </div>
+      //     </div>
+
+      //     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+      //       <div class="grid grid-cols-1">
+      //         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cliente(s) atendidos</label>
+      //         <textarea id="input5" class="h-16 py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
+      //       </div>
+      //       <div class="grid grid-cols-1">
+      //         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Projeto(s) realizados</label>
+      //         <textarea id="input6" class="h-16 py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" />
+      //       </div>
+      //     </div>
+
+      //     <div class="grid grid-cols-1 mt-5 mx-7">
+      //       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Horas corridas? (Número de horas trabalhadas no dia)</label>
+      //       <input id="input7" onClick={() => calcHours()} class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" readonly/>
+      //     </div>
+
+      //     <div class="grid grid-cols-1 mt-5 mx-7">
+      //       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Necessita de alguma coisa do resto da equipe?</label>
+      //       <textarea id="input8" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text"  />
+      //     </div>
+
+
+      //     <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
+      //       <button onClick={() => goBack()} class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Sair</button>
+      //       <button onClick={() => insertForm()} class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Enviar</button>
+      //     </div>
+
+      //   </div>
+      // </div>
+    )
   }
 }
 
