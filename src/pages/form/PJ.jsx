@@ -106,7 +106,7 @@ function PJ() {
       .then((response) => {
         document.getElementById("mensagem").style.display = "block";
         NProgress.done();
-      })
+      }).catch(err => console.log(err))
   }
 
   if (token == null) {
